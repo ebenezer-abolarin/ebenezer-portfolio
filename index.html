@@ -1,0 +1,785 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ebenezer Abolarin | Aerospace Engineering Graduate, CFD and Simulation</title>
+<meta name="description" content="Ebenezer Abolarin, Aerospace Engineering Graduate (M.Eng., Concordia University) in Montreal. CFD and simulation projects in ANSYS Fluent and CFX: spray atomization, turbine cascades, winglets, nozzles and flight dynamics.">
+<meta property="og:title" content="Ebenezer Abolarin | Aerospace Engineering Graduate, CFD and Simulation">
+<meta property="og:description" content="Validated CFD work on turbine blades, winglets, nozzles and sprays, plus hands-on ERJ 135 and 145 maintenance experience.">
+<meta property="og:image" content="vki_velocity_contour.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F5F3EE;
+  --paper-2:#FFFFFF;
+  --ink:#0C1A2A;
+  --ink-2:#3E4D5C;
+  --muted:#6A7886;
+  --line:#DCD8CF;
+  --navy:#0D2136;
+  --navy-2:#132C46;
+  --navy-line:#25415E;
+  --on-navy:#EEF2F6;
+  --on-navy-muted:#9FB1C3;
+  --sky:#E3ECF4;
+  --accent:#E8601C;
+  --accent-soft:#FBE3D5;
+  --radius:14px;
+  --max:1160px;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.mono{font-family:var(--mono)}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:50;background:rgba(245,243,238,.92);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{font-weight:700;font-size:18px;text-decoration:none;letter-spacing:-.01em;white-space:nowrap}
+.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:26px;list-style:none}
+.nav-links a{text-decoration:none;font-size:14.5px;color:var(--ink-2);font-weight:500}
+.nav-links a:hover{color:var(--accent)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;border:1.5px solid transparent;transition:transform .15s ease,background .15s ease;white-space:nowrap}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:#cf5212}
+.btn-ghost{border-color:var(--ink);color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--paper)}
+.nav .btn{padding:9px 16px;font-size:14px}
+
+/* section scaffolding */
+.sec{padding:96px 0}
+.on-navy{background:var(--navy);color:var(--on-navy)}
+.on-sky{background:var(--sky)}
+.eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:22px;height:1.5px;background:currentColor}
+h2.title{font-size:clamp(34px,5vw,54px);line-height:1.05;letter-spacing:-.025em;font-weight:700;margin-bottom:18px}
+h2.title em{font-style:italic;font-weight:600;color:var(--accent)}
+.lede{max-width:680px;color:var(--ink-2);font-size:18px}
+.on-navy .lede{color:var(--on-navy-muted)}
+.sec-head{margin-bottom:48px}
+.swipe-hint{font-family:var(--mono);font-size:12.5px;color:var(--muted);margin-top:10px}
+.on-navy .swipe-hint{color:var(--on-navy-muted)}
+
+/* hero */
+.hero{padding:72px 0 0;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
+.loc{font-family:var(--mono);font-size:13px;color:var(--ink-2);display:inline-flex;align-items:center;gap:8px;margin-bottom:22px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;background:var(--paper-2)}
+.loc i{width:8px;height:8px;border-radius:50%;background:#2E9E5B;display:inline-block}
+.hero h1{font-size:clamp(40px,6.2vw,72px);line-height:1;letter-spacing:-.035em;font-weight:700;margin-bottom:24px}
+.hero h1 em{display:block;font-style:italic;font-weight:600;color:var(--accent)}
+.hero p.pitch{font-size:19px;color:var(--ink-2);max-width:540px;margin-bottom:30px}
+.stats{display:flex;gap:34px;margin-bottom:34px;flex-wrap:wrap}
+.stat b{display:block;font-size:34px;line-height:1;font-weight:700;letter-spacing:-.02em}
+.stat span{font-family:var(--mono);font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.ctas{display:flex;gap:12px;flex-wrap:wrap}
+.hero-visual{position:relative;padding:28px 0 40px}
+.hero-img{border-radius:20px;overflow:hidden;background:#7d97c9;box-shadow:0 30px 60px -30px rgba(12,26,42,.45)}
+.hero-img img{width:100%;aspect-ratio:1100/830;object-fit:cover}
+.badge{position:absolute;background:var(--paper-2);border:1px solid var(--line);border-radius:12px;padding:12px 16px;box-shadow:0 16px 32px -18px rgba(12,26,42,.4);max-width:250px}
+.badge small{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.badge b{display:block;font-size:22px;letter-spacing:-.02em;line-height:1.15}
+.badge span{font-size:13px;color:var(--ink-2);line-height:1.35;display:block}
+.badge.b1{left:-22px;bottom:12px}
+.badge.b2{right:-14px;top:0}
+.ticker{margin-top:56px;background:var(--ink);color:var(--paper);overflow:hidden;white-space:nowrap;padding:14px 0}
+.ticker-track{display:inline-flex;animation:tick 42s linear infinite}
+.ticker-track span{font-family:var(--mono);font-size:14px;padding:0 18px;display:inline-flex;align-items:center;gap:36px}
+.ticker-track span::after{content:"✦";color:var(--accent)}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* where trained */
+.orgs{padding:40px 0 8px}
+.orgs p{font-family:var(--mono);font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:18px;text-align:center}
+.org-row{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 40px}
+.org-row div{font-weight:600;font-size:19px;color:var(--ink-2);letter-spacing:-.01em}
+.org-row div small{display:block;font-family:var(--mono);font-weight:400;font-size:11.5px;color:var(--muted);text-align:center;letter-spacing:.04em}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+.about-visual{position:sticky;top:96px}
+.about-visual figure{border-radius:var(--radius);overflow:hidden;background:#fff;border:1px solid var(--line)}
+.about-visual figcaption{font-family:var(--mono);font-size:12.5px;color:var(--muted);padding:12px 16px;border-top:1px solid var(--line)}
+.about-text p{font-size:18px;color:var(--ink-2);margin-bottom:18px}
+.about-text p strong{color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 38px}
+.chip{font-size:14px;padding:7px 14px;border-radius:999px;background:var(--paper-2);border:1px solid var(--line);color:var(--ink-2)}
+.quals h3{font-family:var(--mono);font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;font-weight:600}
+.qual{display:grid;grid-template-columns:28px 1fr;gap:12px;padding:16px 0;border-top:1px solid var(--line)}
+.qual:last-child{border-bottom:1px solid var(--line)}
+.qual i{width:28px;height:28px;border-radius:8px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-style:normal;font-weight:700;font-size:14px}
+.qual b{display:block;font-size:16.5px}
+.qual span{font-size:15px;color:var(--muted)}
+
+/* featured case studies */
+.case{border-top:1px solid var(--navy-line);padding:56px 0}
+.case:first-of-type{border-top:0;padding-top:8px}
+.case-top{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;margin-bottom:10px}
+.case-num{font-family:var(--mono);font-size:15px;color:var(--accent);font-weight:600}
+.case h3{font-size:clamp(26px,3.4vw,36px);letter-spacing:-.02em;line-height:1.1;font-weight:700}
+.tag{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:999px;border:1px solid var(--navy-line);color:var(--on-navy-muted)}
+.tag.hot{border-color:var(--accent);color:var(--accent)}
+.case-meta{font-family:var(--mono);font-size:13px;color:var(--on-navy-muted);margin-bottom:28px}
+.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+.chipstats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px}
+.cs{background:var(--navy-2);border:1px solid var(--navy-line);border-radius:12px;padding:16px}
+.cs b{display:block;font-size:26px;letter-spacing:-.02em;line-height:1.1;color:#fff}
+.cs span{font-size:13px;color:var(--on-navy-muted);line-height:1.35;display:block;margin-top:4px}
+.fields{display:grid;gap:18px}
+.field h4{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:4px;font-weight:600}
+.field p{color:#D5DEE7;font-size:16px}
+.gallery{display:grid;gap:12px}
+.gallery .main{grid-column:1/-1}
+.gallery.g2{grid-template-columns:1fr 1fr}
+.shot{display:block;width:100%;border:0;padding:0;background:#fff;border-radius:12px;overflow:hidden;cursor:zoom-in;text-align:left;font:inherit;color:inherit}
+.shot img{width:100%;height:100%;object-fit:cover;transition:transform .3s ease}
+.shot:hover img{transform:scale(1.025)}
+.shot .ph{display:block;aspect-ratio:16/10;overflow:hidden;background:#fff}
+.shot .ph.contain img{object-fit:contain}
+.shot figcaption,.shot .cap{display:block;font-family:var(--mono);font-size:12px;line-height:1.4;padding:9px 12px;background:var(--navy-2);color:var(--on-navy-muted)}
+.light .shot .cap{background:var(--paper-2);color:var(--muted);border-top:1px solid var(--line)}
+.light .shot{border:1px solid var(--line)}
+
+/* carousels */
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(300px,370px);gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 24px 18px;margin:0 -24px;scrollbar-width:thin}
+.rail>*{scroll-snap-align:start}
+.card{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
+.card .ph{aspect-ratio:16/10;background:#fff;overflow:hidden;border-bottom:1px solid var(--line)}
+.card .ph img{width:100%;height:100%;object-fit:cover}
+.card .ph.contain img{object-fit:contain;padding:6px}
+.card .ph.type{display:grid;place-items:center;background:var(--navy);color:var(--on-navy)}
+.card .ph.type div{text-align:center;padding:20px}
+.card .ph.type b{display:block;font-size:52px;letter-spacing:-.03em;line-height:1;color:var(--accent)}
+.card .ph.type span{font-family:var(--mono);font-size:12.5px;color:var(--on-navy-muted)}
+.card-body{padding:20px 22px 22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card-top{display:flex;justify-content:space-between;gap:10px;align-items:center}
+.card-top .n{font-family:var(--mono);color:var(--accent);font-weight:600;font-size:14px}
+.card-top .t{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);text-align:right}
+.card h3{font-size:21px;line-height:1.2;letter-spacing:-.01em}
+.card .result{font-weight:600;font-size:15.5px;color:var(--ink);padding-left:12px;border-left:3px solid var(--accent)}
+.card p{font-size:15px;color:var(--ink-2)}
+.card .meta{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:auto;padding-top:8px}
+.card .more{font-family:var(--mono);font-size:12.5px;color:var(--accent);background:none;border:0;cursor:pointer;text-align:left;padding:0;font-weight:600}
+
+/* timeline */
+.timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;position:relative}
+.step{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);padding:22px;position:relative}
+.step .when{font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:.08em;text-transform:uppercase;font-weight:600}
+.step .yr{font-size:21px;font-weight:700;letter-spacing:-.02em;margin:4px 0 8px}
+.step h3{font-size:16px;line-height:1.3;margin-bottom:4px}
+.step .org{font-size:14px;color:var(--muted);margin-bottom:12px}
+.step p{font-size:14.5px;color:var(--ink-2)}
+.step.now{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.step.now .org,.step.now p{color:#B9C5D1}
+
+/* outside */
+.outside{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.out{border:1px solid var(--navy-line);border-radius:var(--radius);padding:26px;background:var(--navy-2)}
+.out b{display:block;font-size:40px;letter-spacing:-.03em;color:#fff;line-height:1}
+.out small{font-family:var(--mono);font-size:12px;color:var(--on-navy-muted);display:block;margin:4px 0 16px}
+.out h3{font-size:18px;color:#fff;margin-bottom:2px}
+.out .org{font-family:var(--mono);font-size:12.5px;color:var(--accent);margin-bottom:10px}
+.out p{font-size:15px;color:#C9D4DF}
+
+/* roles */
+.roles{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.role{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.role .n{font-family:var(--mono);color:var(--accent);font-weight:600;font-size:13px}
+.role h3{font-size:20px;margin:10px 0 8px;letter-spacing:-.01em}
+.role p{font-size:15px;color:var(--ink-2)}
+.callout{margin-top:22px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;background:var(--accent-soft);border:1px solid #F4C6AB;border-radius:var(--radius);padding:24px 28px}
+.callout b{font-size:20px;display:block}
+.callout span{color:var(--ink-2);font-size:15.5px}
+
+/* method */
+.method{counter-reset:m}
+.mstep{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);padding:24px;min-height:200px;display:flex;flex-direction:column;gap:8px}
+.mstep .n{font-family:var(--mono);font-size:44px;font-weight:600;color:var(--accent);line-height:1}
+.mstep h3{font-size:20px}
+.mstep p{font-size:15px;color:var(--ink-2)}
+.mstep.key{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.mstep.key p{color:#B9C5D1}
+.ticker.light{background:transparent;color:var(--ink);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:48px}
+
+/* contact */
+.contact{text-align:center}
+.contact h2.title{font-size:clamp(40px,6vw,68px)}
+.contact .lede{margin:0 auto 34px}
+.contact .ctas{justify-content:center;margin-bottom:28px}
+.contact-list{display:flex;justify-content:center;gap:12px 30px;flex-wrap:wrap;font-family:var(--mono);font-size:14.5px}
+.contact-list a{color:var(--on-navy);text-decoration:none;border-bottom:1px solid var(--navy-line)}
+.contact-list a:hover{color:var(--accent);border-color:var(--accent)}
+footer{background:var(--navy);color:var(--on-navy-muted);border-top:1px solid var(--navy-line);padding:26px 0;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{text-decoration:none;margin-left:18px}
+footer a:first-child{margin-left:0}
+footer a:hover{color:var(--accent)}
+
+/* lightbox */
+dialog.lb{border:0;padding:0;background:transparent;max-width:min(1100px,94vw);max-height:92vh;margin:auto}
+dialog.lb::backdrop{background:rgba(8,16,26,.86)}
+.lb-inner{background:#fff;border-radius:14px;overflow:hidden;position:relative}
+.lb-inner img{max-height:78vh;width:auto;max-width:100%;margin:0 auto}
+.lb-inner p{font-family:var(--mono);font-size:13px;padding:12px 16px;color:var(--ink-2);border-top:1px solid var(--line)}
+.lb-close{position:absolute;top:10px;right:10px;width:38px;height:38px;border-radius:50%;border:0;background:var(--ink);color:#fff;font-size:20px;cursor:pointer;line-height:1}
+dialog.detail{border:0;padding:0;border-radius:16px;max-width:min(720px,94vw);max-height:90vh;margin:auto;background:var(--paper-2);color:var(--ink)}
+dialog.detail::backdrop{background:rgba(8,16,26,.7)}
+.detail-inner{padding:34px;position:relative}
+.detail-inner h3{font-size:26px;letter-spacing:-.02em;margin:6px 0 4px;padding-right:40px}
+.detail-inner .meta{font-family:var(--mono);font-size:12.5px;color:var(--muted);margin-bottom:18px}
+.detail-inner p{color:var(--ink-2);margin-bottom:14px;font-size:16px}
+.detail-inner ul{margin:6px 0 18px 18px;color:var(--ink-2);font-size:15.5px}
+.detail-inner li{margin-bottom:6px}
+.detail-inner .gallery{grid-template-columns:1fr 1fr;margin-top:8px}
+
+@media (max-width:1020px){
+  .nav-links{display:none}
+  .hero-grid,.about-grid,.case-grid{grid-template-columns:1fr}
+  .about-visual{position:static}
+  .case-grid .gallery{order:-1}
+  .timeline{grid-template-columns:repeat(2,1fr)}
+  .roles{grid-template-columns:repeat(2,1fr)}
+  .outside{grid-template-columns:1fr}
+  .badge.b1{left:8px}
+  .badge.b2{right:8px}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .wrap{padding:0 16px}
+  .sec{padding:68px 0}
+  .hero{padding-top:44px}
+  .stats{gap:22px}
+  .stat b{font-size:28px}
+  .chipstats{grid-template-columns:1fr 1fr 1fr;gap:8px}
+  .cs{padding:12px}
+  .cs b{font-size:20px}
+  .cs span{font-size:12px}
+  .timeline,.roles{grid-template-columns:1fr}
+  .rail{grid-auto-columns:84%;padding:4px 16px 18px;margin:0 -16px}
+  .badge{position:static;max-width:none;margin-top:10px}
+  .hero-visual{padding:8px 0 0}
+  .gallery.g2,.detail-inner .gallery{grid-template-columns:1fr}
+  .detail-inner{padding:26px 20px}
+  .nav .btn{display:none}
+  footer a{margin-left:12px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .ticker-track{animation:none}
+  .btn,.shot img{transition:none}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="wrap">
+    <a class="logo" href="#top">Ebenezer<span>.</span>Abolarin</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#featured">Featured Work</a></li>
+      <li><a href="#projects">All Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#method">Method</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="btn btn-primary" href="mailto:feranmiabolarin@yahoo.com">Email me</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="loc"><i></i>Ebenezer Abolarin, based in Montreal</div>
+      <h1>Aerospace Engineering Graduate <em>CFD &amp; Simulation</em></h1>
+      <p class="pitch">I build ANSYS Fluent and CFX models of turbine blades, wings, nozzles and sprays, and I do not trust a result until it agrees with theory, benchmark data or a mesh independence study.</p>
+      <div class="stats">
+        <div class="stat"><b>9</b><span>Simulation projects</span></div>
+        <div class="stat"><b>28%</b><span>Lower drag, winglet</span></div>
+        <div class="stat"><b>2.2%</b><span>From shock theory</span></div>
+      </div>
+      <div class="ctas">
+        <a class="btn btn-primary" href="mailto:feranmiabolarin@yahoo.com">Email me →</a>
+        <a class="btn btn-ghost" href="#featured">See the work</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-img"><img src="vki_velocity_contour.jpg" alt="ANSYS CFX velocity contour through a VKI LS89 turbine blade passage, showing acceleration over the suction side" width="1100" height="830"></div>
+      <div class="badge b2"><small>Turbine cascade</small><b>Mach 1.065</b><span>Peak isentropic Mach at 86% chord, VKI LS89 blade</span></div>
+      <div class="badge b1"><small>Converged</small><b>10<sup>-12</sup></b><span>Residuals over 3,000 iterations, checked against benchmark data</span></div>
+    </div>
+  </div>
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>ANSYS Fluent</span><span>ANSYS CFX</span><span>VOF to DPM multiphase</span><span>k-epsilon and SST k-omega</span><span>Mesh independence studies</span><span>CATIA V5</span><span>MATLAB and Simulink</span><span>XFoil and OpenVSP</span><span>M.Eng. Concordia University</span>
+      <span>ANSYS Fluent</span><span>ANSYS CFX</span><span>VOF to DPM multiphase</span><span>k-epsilon and SST k-omega</span><span>Mesh independence studies</span><span>CATIA V5</span><span>MATLAB and Simulink</span><span>XFoil and OpenVSP</span><span>M.Eng. Concordia University</span>
+    </div>
+  </div>
+</header>
+
+<section class="orgs" aria-label="Where I have trained and worked">
+  <div class="wrap">
+    <p>Where I have trained and worked</p>
+    <div class="org-row">
+      <div>Concordia University<small>M.Eng. Aerospace</small></div>
+      <div>Bristow Helicopters Nigeria Limited<small>Aircraft maintenance</small></div>
+      <div>LADOL<small>Power and maintenance</small></div>
+      <div>University of Lagos<small>B.Sc. Mechanical</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="about">
+  <div class="wrap about-grid">
+    <div class="about-visual">
+      <figure>
+        <img src="winglet_iso_render.jpg" alt="CATIA V5 isometric render of the winglet designed on an Airbus A350 style wing" width="922" height="639" loading="lazy">
+        <figcaption>My winglet design for an A350 style wing, modeled in CATIA V5</figcaption>
+      </figure>
+    </div>
+    <div class="about-text">
+      <div class="eyebrow">Get to know me</div>
+      <h2 class="title">From the hangar <em>to the flow</em></h2>
+      <p>My path into aerospace started on the ground. I studied mechanical engineering at the University of Lagos, kept generators and HVAC systems running at LADOL, and then spent nine months as an aircraft engineering intern at <strong>Bristow Helicopters Nigeria Limited</strong>, working on hydraulics, landing gear and Rolls Royce AE3007 engines on ERJ 135 and 145 aircraft.</p>
+      <p>I came to Concordia for an <strong>M.Eng. in Aerospace Engineering</strong> because I wanted to understand the flow behind the hardware I had been maintaining, and I completed every degree requirement in September 2026. What I bring to a team is both sides of that story: I can set up and validate a CFD model, and I also know what the part looks like on the hangar floor once the simulation is finished.</p>
+      <div class="chips">
+        <span class="chip">Based in Montreal</span>
+        <span class="chip">Open to relocation anywhere in Canada</span>
+        <span class="chip">Open to remote work</span>
+        <span class="chip">English and Yoruba, French A2 and improving</span>
+        <span class="chip">Football, music and novels</span>
+      </div>
+      <div class="quals">
+        <h3>Qualifications</h3>
+        <div class="qual"><i>1</i><div><b>M.Eng. Aerospace Engineering, Concordia University</b><span>All requirements completed Sept 2026, with the degree conferred in Feb 2027</span></div></div>
+        <div class="qual"><i>2</i><div><b>B.Sc. Mechanical Engineering, University of Lagos</b><span>Turbomachinery, heat transfer and compressible flow, the base under every model I build</span></div></div>
+        <div class="qual"><i>3</i><div><b>Aircraft Engineer Intern, Bristow Helicopters Nigeria Limited</b><span>Cut maintenance check turnaround by 20% on ERJ 135 and 145 hydraulic systems</span></div></div>
+        <div class="qual"><i>4</i><div><b>Quality Health, Safety and Environment, Level 1 to 3</b><span>Procedure comes first, on the hangar floor and in the lab</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec on-navy" id="featured">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Case studies</div>
+      <h2 class="title">Featured <em>work</em></h2>
+      <p class="lede">Three projects told the way a design review would hear them: the problem, how I set it up, how I checked it, and what came out. Every figure comes straight from the original simulation files. Select any image to enlarge it.</p>
+    </div>
+
+    <article class="case">
+      <div class="case-top"><span class="case-num">01</span><h3>Spray Atomization CFD, Effervescent Atomizer</h3><span class="tag hot">Flagship</span><span class="tag">Multiphase</span></div>
+      <div class="case-meta">ENGR 7961 Industrial Stage · Concordia University · ANSYS Fluent 2025 R2 · Jan to Apr 2026 · two person team with Kelechi Nwokoagbara</div>
+      <div class="case-grid">
+        <div>
+          <div class="chipstats">
+            <div class="cs"><b>≈100 µm</b><span>Sauter mean diameter (D32)</span></div>
+            <div class="cs"><b>8</b><span>Progressive simulation trials</span></div>
+            <div class="cs"><b>9.5M</b><span>Particles tracked in 2,012 parcels</span></div>
+          </div>
+          <div class="fields">
+            <div class="field"><h4>Problem</h4><p>An effervescent atomizer needed a two-phase CFD framework, built first with water and air, that a later gel propellant study could build on.</p></div>
+            <div class="field"><h4>Approach</h4><p>Our first Volume of Fluid model captured the mixing inside the injector well, but it never broke the liquid into droplets. We diagnosed why and moved to a coupled VOF to DPM model on a 32 orifice geometry, using sphere of influence refinement at the nozzle exit to keep the mesh at 540,985 elements, inside the student license limit.</p></div>
+            <div class="field"><h4>Validation</h4><p>A 2D trial on a 22,500 cell domain confirmed the breakup behavior before we committed to full 3D. Switching pressure velocity coupling from SIMPLE to PISO and tuning under relaxation to 0.3 for pressure and 0.5 for momentum brought every residual below 10<sup>-4</sup>.</p></div>
+            <div class="field"><h4>Result</h4><p>The final model settled on a D32 of 9.98 × 10<sup>-5</sup> m, with droplets from 1.56 µm to 705 µm, and it is now the baseline for Newtonian and non Newtonian propellant studies.</p></div>
+          </div>
+        </div>
+        <div class="gallery g2">
+          <button class="shot main" data-cap="Fig. 23. Volume fraction of water through the injector after 3,000 iterations"><span class="ph contain"><img src="atomizer_volfrac_injector.jpg" alt="Volume fraction of water through the effervescent injector" loading="lazy"></span><span class="cap">Volume fraction of water through the injector after 3,000 iterations</span></button>
+          <button class="shot" data-cap="Fig. 21. Sphere of influence mesh refinement at the injector exit, 540,985 elements"><span class="ph"><img src="atomizer_mesh_sphere.jpg" alt="Sphere of influence mesh refinement at the injector exit" loading="lazy"></span><span class="cap">Local refinement at the exit, 540,985 elements</span></button>
+          <button class="shot" data-cap="Fig. 22. Scaled residuals, all variables below 1e-4"><span class="ph"><img src="atomizer_residuals.jpg" alt="Scaled residuals plot with all variables below 1e-4" loading="lazy"></span><span class="cap">Residuals, all below 10<sup>-4</sup></span></button>
+          <button class="shot main" data-cap="Fig. 25. Final particle diameter track downstream of the injector"><span class="ph contain"><img src="atomizer_particle_diam2.jpg" alt="Particle diameter track downstream of the injector" loading="lazy"></span><span class="cap">Final particle diameter track</span></button>
+        </div>
+      </div>
+    </article>
+
+    <article class="case">
+      <div class="case-top"><span class="case-num">02</span><h3>Numerical Analysis of a VKI Turbine Blade</h3><span class="tag">Turbomachinery</span><span class="tag">Propulsion</span></div>
+      <div class="case-meta">MECH 6171 Turbomachinery and Propulsion · Concordia University · ANSYS CFX · Sept to Dec 2025</div>
+      <div class="case-grid">
+        <div>
+          <div class="chipstats">
+            <div class="cs"><b>2.14%</b><span>Total pressure loss, 6,176 Pa</span></div>
+            <div class="cs"><b>1.065</b><span>Peak isentropic Mach at 86% chord</span></div>
+            <div class="cs"><b>219,807</b><span>Elements after the mesh study</span></div>
+          </div>
+          <div class="fields">
+            <div class="field"><h4>Problem</h4><p>Model the VKI LS89 turbine cascade, a standard validation case with published pressure and Mach data from the Von Karman Institute, and predict its isentropic Mach distribution and total pressure loss.</p></div>
+            <div class="field"><h4>Approach</h4><p>I built the cascade from imported coordinates, extruded it into a 3D domain, meshed it with inflation layers at the blade surface, and ran k-epsilon turbulence with periodic boundaries to represent an infinite blade row, at 415 K total temperature and 288 kPa total pressure at the inlet.</p></div>
+            <div class="field"><h4>Validation</h4><p>A mesh independence study across several element sizes settled on a 2 mm mesh, past which the pressure barely moved. Residuals were driven to 10<sup>-12</sup> over 3,000 iterations while I tracked outlet mass flow, and the results were checked against the benchmark test data.</p></div>
+            <div class="field"><h4>Result</h4><p>Total pressure loss came out at 6,176 Pa, about 2.14% of inlet total pressure, and the isentropic Mach number climbed from 0.562 at the leading edge to 1.065 at 86% chord. Low pressure on the suction side and high pressure on the pressure side is exactly how a working turbine blade should behave.</p></div>
+          </div>
+        </div>
+        <div class="gallery g2">
+          <button class="shot main" data-cap="Fig. 12. Midplane static pressure contour, VKI LS89 cascade"><span class="ph"><img src="vki_pressure_contour.jpg" alt="Static pressure contour across the VKI turbine blade" loading="lazy"></span><span class="cap">Midplane static pressure contour</span></button>
+          <button class="shot" data-cap="Fig. 2. Unstructured mesh with 1 mm blade surface sizing and inflation layers"><span class="ph"><img src="vki_mesh.jpg" alt="Unstructured mesh around the VKI turbine blade" loading="lazy"></span><span class="cap">Mesh with inflation layers</span></button>
+          <button class="shot" data-cap="Fig. 1. VKI blade cascade geometry, 80 mm true chord"><span class="ph"><img src="vki_blade_geometry.jpg" alt="VKI blade cascade geometry" loading="lazy"></span><span class="cap">Cascade geometry, 80 mm chord</span></button>
+        </div>
+      </div>
+    </article>
+
+    <article class="case">
+      <div class="case-top"><span class="case-num">03</span><h3>Design of an Aircraft Winglet</h3><span class="tag">External aerodynamics</span></div>
+      <div class="case-meta">MECH 6451 Computer Aided Mechanical Design · Concordia University · CATIA V5, ANSYS Fluent · Sept to Dec 2024</div>
+      <div class="case-grid">
+        <div>
+          <div class="chipstats">
+            <div class="cs"><b>28%</b><span>Lower drag coefficient than the plain wing</span></div>
+            <div class="cs"><b>+1.1%</b><span>Higher lift coefficient</span></div>
+            <div class="cs"><b>M 0.85</b><span>Cruise at 35,000 ft</span></div>
+          </div>
+          <div class="fields">
+            <div class="field"><h4>Problem</h4><p>Design a winglet for an Airbus A350 style wing that cuts induced drag, with cant angle as the main design variable across 30° to 90°.</p></div>
+            <div class="field"><h4>Approach</h4><p>I modeled the wing and winglet in CATIA V5, estimating chord lengths and airfoil sections from published A350 dimensions and NASA supercritical airfoil data where exact figures were not public, then ran both configurations in ANSYS Fluent over 500 solver iterations.</p></div>
+            <div class="field"><h4>Validation</h4><p>The wing with and without the winglet ran under identical cruise conditions and setup, so the difference comes from the geometry alone, and the final span was checked against ICAO Aerodrome Reference Code limits for commercial aircraft.</p></div>
+            <div class="field"><h4>Result</h4><p>The winglet gave a 28% lower drag coefficient and a 1.1% higher lift coefficient than the plain wing. The streamlines show why: the plain tip lets high pressure air spill around it unchecked, while the winglet turns that same spill upward along its surface.</p></div>
+          </div>
+        </div>
+        <div class="gallery g2">
+          <button class="shot" data-cap="Fig. 3f. Velocity streamlines, wing with the winglet"><span class="ph contain"><img src="winglet_streamline_with.jpg" alt="Velocity streamlines over the wing with the winglet" loading="lazy"></span><span class="cap">With the winglet</span></button>
+          <button class="shot" data-cap="Fig. 3k. Velocity streamlines, wing without the winglet"><span class="ph contain"><img src="winglet_streamline_without.jpg" alt="Velocity streamlines over the wing without the winglet" loading="lazy"></span><span class="cap">Without the winglet</span></button>
+          <button class="shot main" data-cap="Fig. 2.4. Isometric view of the designed winglet, CATIA V5"><span class="ph contain"><img src="winglet_iso_render.jpg" alt="Isometric render of the winglet in CATIA V5" loading="lazy"></span><span class="cap">The winglet in CATIA V5</span></button>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="sec light" id="projects">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Portfolio</div>
+      <h2 class="title">More CFD <em>projects</em></h2>
+      <p class="lede">Compressible flow, low speed aerodynamics and combustion, from a nozzle checked against shock tables to an injector redesigned over five rounds.</p>
+      <p class="swipe-hint">Swipe to see more →</p>
+    </div>
+    <div class="rail">
+      <article class="card">
+        <button class="shot" data-cap="Fig. 7. Normal shock velocity streamlines inside the diverging section"><span class="ph"><img src="nozzle_shock_streamlines.jpg" alt="Normal shock velocity streamlines in the converging diverging nozzle" loading="lazy"></span></button>
+        <div class="card-body">
+          <div class="card-top"><span class="n">04</span><span class="t">Compressible flow · Fluent</span></div>
+          <h3>Converging Diverging Nozzle</h3>
+          <div class="result">Shocks formed between 161,138 Pa and 237,575 Pa outlet pressure, within 2.2% of 1D shock tables.</div>
+          <p>One nozzle, sized from isentropic theory for an inlet Mach number of 0.5, pushed through five regimes by sweeping back pressure.</p>
+          <button class="more" data-detail="d-nozzle">Read the full study →</button>
+          <div class="meta">MECH 6111 Gas Dynamics · Sept to Dec 2025</div>
+        </div>
+      </article>
+      <article class="card">
+        <button class="shot" data-cap="Fig. 9. Cl, Cd, Cm and Cl/Cd against angle of attack at the wingtip station"><span class="ph contain"><img src="uav_naca_tip_charts.jpg" alt="Lift, drag and moment charts for six NACA airfoils at the wingtip station" loading="lazy"></span></button>
+        <div class="card-body">
+          <div class="card-top"><span class="n">05</span><span class="t">Low speed aero · XFoil, OpenVSP</span></div>
+          <h3>Aerodynamic Optimization of a UAV</h3>
+          <div class="result">NACA 4415 and 4412 picked from six airfoils as the best balance of lift to drag and pitch stability.</div>
+          <p>Six NACA profiles swept from -5° to 15°, then built into two conceptual UAVs with sweep, twist and taper varied.</p>
+          <button class="more" data-detail="d-uav">Read the full study →</button>
+          <div class="meta">MECH 6121 Aerodynamics · Jan to Apr 2025</div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="ph type"><div><b>30%</b><span>Better combustion efficiency</span></div></div>
+        <div class="card-body">
+          <div class="card-top"><span class="n">06</span><span class="t">Combustion · Fluent</span></div>
+          <h3>Low Emission Combustion Design</h3>
+          <div class="result">Led a three person team to 30% better combustion efficiency over five CFD iterations of the injector.</div>
+          <p>Each round of results became a targeted geometry change, reviewed with the team before the next run.</p>
+          <button class="more" data-detail="d-combustion">Read the full study →</button>
+          <div class="meta">Concordia University · Jan to Apr 2025</div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec on-sky light" id="beyond">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Beyond CFD</div>
+      <h2 class="title">Flight dynamics <em>and avionics</em></h2>
+      <p class="lede">The same habit of checking every number, applied to aircraft performance, flight control and navigation.</p>
+      <p class="swipe-hint">Swipe to see more →</p>
+    </div>
+    <div class="rail">
+      <article class="card">
+        <div class="ph type"><div><b>0.7%</b><span>From the flight manual takeoff run</span></div></div>
+        <div class="card-body">
+          <div class="card-top"><span class="n">07</span><span class="t">Performance · MATLAB</span></div>
+          <h3>Aircraft Performance Analysis, Robin DR400</h3>
+          <div class="result">Computed a 293 m takeoff ground run against the 295 m published in the flight manual.</div>
+          <p>I also derived two values the manual does not publish: a power specific fuel consumption of 8.33 × 10<sup>-7</sup> N/J and a propeller efficiency of 74%.</p>
+          <button class="more" data-detail="d-robin">Read the full study →</button>
+          <div class="meta">MECH 6241 Aircraft Performance · Jan to Apr 2026</div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="ph type"><div><b>1.4 s</b><span>Level 1 roll requirement, now met</span></div></div>
+        <div class="card-body">
+          <div class="card-top"><span class="n">08</span><span class="t">Flight control · Simulink</span></div>
+          <h3>NASA AD1 Oblique Wing Flight Control</h3>
+          <div class="result">Brought roll response inside the 1.4 s Level 1 requirement at both 0° and 30° sweep.</div>
+          <p>A nonlinear six degree of freedom model built from published NASA flight test derivatives, then a tuned PID roll rate controller.</p>
+          <button class="more" data-detail="d-ad1">Read the full study →</button>
+          <div class="meta">MECH 6091 Flight Control Systems · Sept to Dec 2025</div>
+        </div>
+      </article>
+      <article class="card">
+        <button class="shot" data-cap="Fig. 5. True, INS only, GPS only and RLS trajectories during the landing descent"><span class="ph contain"><img src="rls_combined_trajectory.jpg" alt="True, INS only, GPS only and RLS fused trajectories plotted together" loading="lazy"></span></button>
+        <div class="card-body">
+          <div class="card-top"><span class="n">09</span><span class="t">Navigation · MATLAB</span></div>
+          <h3>INS and GPS Navigation Estimation</h3>
+          <div class="result">A Recursive Least Squares filter cut trajectory error by 61% against INS alone (RMSE 169.8 against 435.2).</div>
+          <p>Noisy accelerometer, gyroscope and GPS data fused into one estimate over a 100 second landing descent.</p>
+          <button class="more" data-detail="d-rls">Read the full study →</button>
+          <div class="meta">ENGR 6461 Avionics Navigation Systems · Dec 2024</div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="experience">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Experience</div>
+      <h2 class="title">The road <em>to aerospace</em></h2>
+      <p class="lede">Every role moved me one step nearer to aircraft, starting with generators in Lagos and ending with turbine blades in Montreal.</p>
+    </div>
+    <div class="timeline">
+      <div class="step"><div class="when">Where it started</div><div class="yr">2019</div><h3>Maintenance Engineer Intern</h3><div class="org">LADOL, Lagos</div><p>Cut operational downtime by 40% by maintaining 8+ heavy duty generators every week.</p></div>
+      <div class="step"><div class="when">Three years later</div><div class="yr">2022</div><h3>Power Engineer Intern</h3><div class="org">LADOL, Lagos</div><p>Halved emergency shutdowns across 8+ generator units and delivered three concurrent projects on time.</p></div>
+      <div class="step"><div class="when">On the aircraft</div><div class="yr">2023 to 2024</div><h3>Aircraft Engineer Intern</h3><div class="org">Bristow Helicopters Nigeria Limited</div><p>Cut maintenance check turnaround by 20% and extended NiCad battery life by 30% across five ERJ aircraft.</p></div>
+      <div class="step"><div class="when">Into the flow</div><div class="yr">2024 to 2026</div><h3>M.Eng. Aerospace Engineering</h3><div class="org">Concordia University, Montreal</div><p>Nine simulation and design projects, from spray atomization to flight control.</p></div>
+      <div class="step now"><div class="when">Now</div><div class="yr">Next</div><h3>Looking for my first aerospace role</h3><div class="org">Anywhere in Canada, or remote</div><p>CFD, aerodynamics or propulsion, where validated simulation feeds real design decisions.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec on-navy" id="outside">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Outside the classroom</div>
+      <h2 class="title">Volunteering <em>and leadership</em></h2>
+    </div>
+    <div class="outside">
+      <div class="out"><b>150+</b><small>Founder signups</small><h3>Volunteer Ambassador</h3><div class="org">Startup Atlantic, Montreal · Jul 2026</div><p>First point of contact for founders, turning funding program rules into clear next steps for people from technical and business backgrounds.</p></div>
+      <div class="out"><b>500+</b><small>Visitors guided</small><h3>Open House Volunteer</h3><div class="org">Concordia Aerospace Engineering · Oct 2024</div><p>Explained the aerospace program to prospective students and families alongside department staff.</p></div>
+      <div class="out"><b>10+</b><small>Events led</small><h3>Vice President Events</h3><div class="org">University of Lagos Energy Club · 2020 to 2022</div><p>Organized student and industry events that connected members with the renewable energy sector.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="roles">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">How I can help your team</div>
+      <h2 class="title">Roles I am <em>looking for</em></h2>
+    </div>
+    <div class="roles">
+      <div class="role"><span class="n">01</span><h3>CFD Analysis</h3><p>ANSYS Fluent and CFX models with mesh independence and validation built in from the start.</p></div>
+      <div class="role"><span class="n">02</span><h3>Aerodynamics</h3><p>Airfoils, wings and external flow, from XFoil and OpenVSP studies up to full 3D CFD.</p></div>
+      <div class="role"><span class="n">03</span><h3>Propulsion</h3><p>Turbine cascades, nozzles, combustion and spray, which make up four of my nine projects.</p></div>
+      <div class="role"><span class="n">04</span><h3>Aircraft Maintenance at an OEM</h3><p>Hands-on ERJ 135, 145 and AE3007 experience, backed by engineering analysis.</p></div>
+    </div>
+    <div class="callout">
+      <div><b>Open to relocation anywhere in Canada, and to remote work</b><span>Graduated Sept 2026 and available to start three weeks after an offer.</span></div>
+      <a class="btn btn-primary" href="mailto:feranmiabolarin@yahoo.com">Email me →</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec on-sky" id="method">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">How I work</div>
+      <h2 class="title">From geometry <em>to a result you can trust</em></h2>
+      <p class="lede">Most of my time on a simulation goes into steps five and six, because a contour plot only means something once the model behind it has been checked.</p>
+      <p class="swipe-hint">Swipe to see more →</p>
+    </div>
+    <div class="rail method">
+      <div class="mstep"><span class="n">01</span><h3>Define</h3><p>The question, the operating conditions and what a good answer has to look like.</p></div>
+      <div class="mstep"><span class="n">02</span><h3>Geometry</h3><p>Build or clean the model in CATIA V5 or Design Modeler.</p></div>
+      <div class="mstep"><span class="n">03</span><h3>Mesh</h3><p>Refine locally where the physics happens and stay within the cell budget.</p></div>
+      <div class="mstep"><span class="n">04</span><h3>Set up</h3><p>Solver, turbulence model and boundary conditions, each with a reason behind it.</p></div>
+      <div class="mstep key"><span class="n">05</span><h3>Verify</h3><p>Residuals, monitors and a mesh independence study before any result is read.</p></div>
+      <div class="mstep key"><span class="n">06</span><h3>Validate</h3><p>Compare against theory, shock tables or benchmark test data.</p></div>
+      <div class="mstep"><span class="n">07</span><h3>Report</h3><p>Plots and numbers a design team can act on, with the limits stated plainly.</p></div>
+    </div>
+    <div class="ticker light" aria-hidden="true">
+      <div class="ticker-track">
+        <span>CFD Analysis</span><span>Aerodynamics</span><span>Propulsion</span><span>Flight Dynamics</span><span>Aircraft Systems</span><span>Verification and Validation</span>
+        <span>CFD Analysis</span><span>Aerodynamics</span><span>Propulsion</span><span>Flight Dynamics</span><span>Aircraft Systems</span><span>Verification and Validation</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec on-navy contact" id="contact">
+  <div class="wrap">
+    <div class="eyebrow" style="justify-content:center">Get in touch</div>
+    <h2 class="title">Tell me about <em>your next flow problem</em></h2>
+    <p class="lede">If your team works on CFD, aerodynamics, propulsion or aircraft maintenance in Canada, I would like to hear what you are building.</p>
+    <div class="ctas"><a class="btn btn-primary" href="mailto:feranmiabolarin@yahoo.com">Email me →</a><a class="btn btn-ghost" style="border-color:var(--on-navy);color:var(--on-navy)" href="https://linkedin.com/in/abolarin-feranmi" target="_blank" rel="noopener">LinkedIn</a></div>
+    <div class="contact-list">
+      <a href="mailto:feranmiabolarin@yahoo.com">feranmiabolarin@yahoo.com</a>
+      <a href="tel:+14387643281">(438) 764 3281</a>
+      <a href="https://linkedin.com/in/abolarin-feranmi" target="_blank" rel="noopener">linkedin.com/in/abolarin-feranmi</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Ebenezer Abolarin. Aerospace Engineering Graduate (M.Eng.), CFD and Simulation, Montreal.</span>
+    <span><a href="mailto:feranmiabolarin@yahoo.com">Email</a><a href="https://linkedin.com/in/abolarin-feranmi" target="_blank" rel="noopener">LinkedIn</a><a href="#top">Back to top ↑</a></span>
+  </div>
+</footer>
+
+<dialog class="lb" id="lb" aria-label="Enlarged figure">
+  <div class="lb-inner">
+    <button class="lb-close" aria-label="Close">×</button>
+    <img id="lb-img" alt="">
+    <p id="lb-cap"></p>
+  </div>
+</dialog>
+
+<dialog class="detail" id="d-nozzle" aria-labelledby="t-nozzle">
+  <div class="detail-inner">
+    <button class="lb-close" aria-label="Close">×</button>
+    <div class="eyebrow">04 · Compressible flow</div>
+    <h3 id="t-nozzle">Flow Behaviour in a Converging Diverging Nozzle</h3>
+    <div class="meta">MECH 6111 Gas Dynamics · Concordia University · ANSYS Fluent, density based solver · Sept to Dec 2025</div>
+    <p>I took a single planar nozzle, sized from isentropic flow theory for an inlet Mach number of 0.5, and pushed it through five regimes by sweeping the outlet back pressure: subsonic choked flow, isentropic supersonic design flow, a normal shock inside the diverging section, an oblique shock outside the nozzle, and expansion waves.</p>
+    <p>Every case ran on a structured quadrilateral mesh with an inviscid ideal gas model, and I checked each one against one dimensional isentropic flow theory and normal shock tables before reading the contours. The results agreed within 2.2%.</p>
+    <ul>
+      <li>Raising outlet pressure to 165 kPa pushed the normal shock into the diverging section, where Mach drops from supersonic to subsonic across a few millimeters.</li>
+      <li>Lowering it to 50 kPa moved the shock outside the nozzle and weakened it into an oblique shock.</li>
+      <li>The subsonic choked case showed flow recirculation.</li>
+    </ul>
+    <div class="gallery">
+      <button class="shot" data-cap="Fig. 8. Normal shock Mach number contour"><span class="ph contain"><img src="nozzle_shock_mach.jpg" alt="Normal shock Mach number contour" loading="lazy"></span><span class="cap">Normal shock, Mach contour</span></button>
+      <button class="shot" data-cap="Fig. 10. Oblique shock Mach contour outside the nozzle"><span class="ph contain"><img src="nozzle_oblique_shock.jpg" alt="Oblique shock Mach contour outside the nozzle" loading="lazy"></span><span class="cap">Oblique shock outside the nozzle</span></button>
+      <button class="shot" data-cap="Fig. 4. Subsonic Mach number contour"><span class="ph contain"><img src="nozzle_subsonic_mach.jpg" alt="Subsonic Mach number contour" loading="lazy"></span><span class="cap">Subsonic choked flow</span></button>
+      <button class="shot" data-cap="Static pressure contour through the nozzle"><span class="ph contain"><img src="nozzle_pressure_contour.jpg" alt="Static pressure contour through the nozzle" loading="lazy"></span><span class="cap">Static pressure contour</span></button>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="detail" id="d-uav" aria-labelledby="t-uav">
+  <div class="detail-inner">
+    <button class="lb-close" aria-label="Close">×</button>
+    <div class="eyebrow">05 · Low speed aerodynamics</div>
+    <h3 id="t-uav">Aerodynamic Optimization of a UAV</h3>
+    <div class="meta">MECH 6121 Aerodynamics · Concordia University · XFoil, OpenVSP · Jan to Apr 2025 · team project with Tchokote N. Ulrich</div>
+    <p>We compared six NACA profiles (2412, 2410, 4415, 4412, 6412 and 6409) in XFoil for pressure coefficient, lift, drag and pitching moment from -5° to 15° angle of attack, then built the strongest pairs into two conceptual UAVs in OpenVSP, changing sweep, twist and taper while holding the fuselage and tail fixed.</p>
+    <p>A three level mesh study showed the coarse mesh under-predicting drag past stall, while the medium and fine meshes landed on nearly the same curve, so the rest of the study ran on the cheaper medium mesh.</p>
+    <ul>
+      <li>NACA 6412 and 6409 gave the highest Cl/Cd, but also the most negative pitching moment, so they would need more stabilizer authority to trim.</li>
+      <li>NACA 2410 and 2412 held the flattest, most stable moment curve.</li>
+      <li>NACA 4415 and 4412 were the balanced choice for cruise.</li>
+    </ul>
+    <div class="gallery">
+      <button class="shot" data-cap="Fig. 6. Mesh independence study, L/D against angle of attack"><span class="ph contain"><img src="uav_ld_chart.jpg" alt="Mesh independence study chart" loading="lazy"></span><span class="cap">Mesh independence study</span></button>
+      <button class="shot" data-cap="Root station charts for the six NACA airfoils"><span class="ph contain"><img src="uav_naca_root_charts.jpg" alt="Root station airfoil charts" loading="lazy"></span><span class="cap">Root station comparison</span></button>
+      <button class="shot" data-cap="Fig. 4. UAV concept with a NACA 4415 and 4412 wing"><span class="ph contain"><img src="uav_concept1.jpg" alt="UAV concept one in OpenVSP" loading="lazy"></span><span class="cap">Concept 1, NACA 4415 and 4412</span></button>
+      <button class="shot" data-cap="Fig. 5. UAV concept with a NACA 6412 and 6409 wing"><span class="ph contain"><img src="uav_concept2.jpg" alt="UAV concept two in OpenVSP" loading="lazy"></span><span class="cap">Concept 2, NACA 6412 and 6409</span></button>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="detail" id="d-combustion" aria-labelledby="t-combustion">
+  <div class="detail-inner">
+    <button class="lb-close" aria-label="Close">×</button>
+    <div class="eyebrow">06 · Combustion</div>
+    <h3 id="t-combustion">Low Emission Combustion Design</h3>
+    <div class="meta">Concordia University · ANSYS Fluent · Jan to Apr 2025 · team lead, three person team</div>
+    <p>I led a three person team redesigning an injector assembly for cleaner, more efficient combustion. Over five ANSYS Fluent iterations, we turned each set of results into a specific geometry change and benchmarked combustion efficiency round over round, finishing 30% above where we started.</p>
+    <ul>
+      <li>Prepared the test plans and validation reports covering simulation setup, results and data reliability.</li>
+      <li>Built Power BI visuals that put CFD and test data side by side, which made our design reviews 25% more efficient.</li>
+    </ul>
+  </div>
+</dialog>
+
+<dialog class="detail" id="d-robin" aria-labelledby="t-robin">
+  <div class="detail-inner">
+    <button class="lb-close" aria-label="Close">×</button>
+    <div class="eyebrow">07 · Aircraft performance</div>
+    <h3 id="t-robin">Aircraft Performance Analysis, Robin DR400</h3>
+    <div class="meta">MECH 6241 Aircraft Performance · Concordia University · MATLAB · Jan to Apr 2026</div>
+    <p>I built a MATLAB model from the flight manual's aerodynamic and powerplant data that computes takeoff, climb, cruise, range, endurance and service ceiling for the Robin DR400. Its takeoff ground run came out at 293 m against the 295 m in the manual, a 0.7% difference.</p>
+    <ul>
+      <li>Back solved the manufacturer's range and fuel data to derive a power specific fuel consumption of 8.33 × 10<sup>-7</sup> N/J and a propeller efficiency of 74%, neither of which the manual publishes.</li>
+      <li>Benchmarked the DR400 against the Cessna 172R and Robin CAP10 across seven performance metrics, and found its flap system gives a 33% shorter landing ground run than the Cessna.</li>
+    </ul>
+  </div>
+</dialog>
+
+<dialog class="detail" id="d-ad1" aria-labelledby="t-ad1">
+  <div class="detail-inner">
+    <button class="lb-close" aria-label="Close">×</button>
+    <div class="eyebrow">08 · Flight control</div>
+    <h3 id="t-ad1">NASA AD1 Oblique Wing Flight Control Research</h3>
+    <div class="meta">MECH 6091 Flight Control Systems · Concordia University · MATLAB and Simulink · Sept to Dec 2025</div>
+    <p>I modeled the nonlinear six degree of freedom flight dynamics of NASA's AD1 oblique wing research aircraft at 0° and 30° wing sweep, using aerodynamic derivatives estimated from published NASA flight test data.</p>
+    <ul>
+      <li>Trim and linearized stability analysis showed a roll response of 1.83 to 2.12 seconds, slower than the 1.4 second Level 1 handling quality requirement for the aircraft's class.</li>
+      <li>A PID roll rate controller, designed and tuned in Simulink against the linear state space models, brought roll response inside 1.4 seconds at both sweep angles.</li>
+    </ul>
+  </div>
+</dialog>
+
+<dialog class="detail" id="d-rls" aria-labelledby="t-rls">
+  <div class="detail-inner">
+    <button class="lb-close" aria-label="Close">×</button>
+    <div class="eyebrow">09 · Navigation</div>
+    <h3 id="t-rls">Aircraft Navigation Estimation Using INS and GPS Sensors</h3>
+    <div class="meta">ENGR 6461 Avionics Navigation Systems · Concordia University · MATLAB · Dec 2024</div>
+    <p>Inertial navigation drifts because accelerometer and gyroscope noise compounds through double integration, while GPS is steadier but refreshes slowly. I designed a Recursive Least Squares algorithm in MATLAB, with a forgetting factor and its own gain vector and covariance updates, to fuse the two during a 100 waypoint, 100 second landing descent.</p>
+    <ul>
+      <li>RMSE against the true path: 435.2 for INS only, 169.8 for the fused RLS estimate, a 61% cut.</li>
+      <li>GPS alone scored 7.6 at the noise levels I modeled, so the value of the fusion is a single estimate that keeps working when GPS drops out.</li>
+    </ul>
+    <div class="gallery">
+      <button class="shot" data-cap="Fig. 2. INS only trajectory"><span class="ph contain"><img src="rls_ins_only.jpg" alt="INS only trajectory" loading="lazy"></span><span class="cap">INS only, drift builds up</span></button>
+      <button class="shot" data-cap="Fig. 3. GPS only trajectory"><span class="ph contain"><img src="rls_gps_only.jpg" alt="GPS only trajectory" loading="lazy"></span><span class="cap">GPS only, rougher steps</span></button>
+    </div>
+  </div>
+</dialog>
+
+<script>
+(function(){
+  var lb=document.getElementById('lb');
+  var lbImg=document.getElementById('lb-img');
+  var lbCap=document.getElementById('lb-cap');
+  function openDialog(d){ if(d && typeof d.showModal==='function'){ d.showModal(); } }
+  document.addEventListener('click',function(e){
+    var shot=e.target.closest('.shot');
+    if(shot){
+      var img=shot.querySelector('img');
+      if(!img) return;
+      lbImg.src=img.getAttribute('src');
+      lbImg.alt=img.alt;
+      lbCap.textContent=shot.getAttribute('data-cap')||img.alt;
+      openDialog(lb);
+      return;
+    }
+    var more=e.target.closest('.more');
+    if(more){ openDialog(document.getElementById(more.getAttribute('data-detail'))); return; }
+    var close=e.target.closest('.lb-close');
+    if(close){ close.closest('dialog').close(); return; }
+    if(e.target.tagName==='DIALOG'){ e.target.close(); }
+  });
+})();
+</script>
+</body>
+</html>
